@@ -1,15 +1,7 @@
-Camel Router Spring Project
+Spring certification Spilca
 ===========================
 
-To build this project use
+Follow-along code for the Spring certification tutorial by Laurentiu Spilca on youtube:
+https://www.youtube.com/watch?v=m-L-r862J-E&t=1126s
 
-    mvn install
-
-To run this project with Maven use
-
-    mvn camel:run
-
-For more help see the Apache Camel documentation
-
-    http://camel.apache.org/
 
