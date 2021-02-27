@@ -18,6 +18,14 @@ public class Main {
 
             // Get a MyBean instance from the context
             myBean = context.getBean(MyBean.class);
+            MyBean myBean2 = context.getBean(MyBean.class);
+            MyBean myBean3 = context.getBean(MyBean.class);
+
+            System.out.println(myBean.getText());
+
+            System.out.println(myBean); //  We will see that all beans have the same hash id.
+            System.out.println(myBean2); // This is because Spring creates singleton beans by default.
+            System.out.println(myBean3);
         }
     }
 }
