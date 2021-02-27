@@ -14,4 +14,11 @@ public class ProjectConfiguration {
         b.setText("Hello");
         return b;
     }
+
+    @Bean
+    public MyBean myBean2() { // We declare a second @Bean annotated method for type MyBean.
+        MyBean b = new MyBean();
+        b.setText("World");
+        return b;
+    }
 }
