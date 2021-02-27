@@ -17,14 +17,14 @@ public class Main {
                      new AnnotationConfigApplicationContext(ProjectConfiguration.class)) {
 
             // Get a MyBean instance from the context
-            myBean = context.getBean(MyBean.class);
-            MyBean myBean2 = context.getBean(MyBean.class);
-            MyBean myBean3 = context.getBean(MyBean.class);
+            myBean = context.getBean("myBean", MyBean.class);
+            MyBean myBean2 = context.getBean("myBean2", MyBean.class);
+            MyBean myBean3 = context.getBean("myBean", MyBean.class);
 
             System.out.println(myBean.getText());
 
-            System.out.println(myBean); //  We will see that all beans have the same hash id.
-            System.out.println(myBean2); // This is because Spring creates singleton beans by default.
+            System.out.println(myBean);
+            System.out.println(myBean2); // MyBean two is a different bean with a different hash id.
             System.out.println(myBean3);
         }
     }
