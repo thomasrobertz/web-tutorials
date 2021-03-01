@@ -15,7 +15,7 @@ public class Main {
         try (AnnotationConfigApplicationContext context =
                      new AnnotationConfigApplicationContext(ProjectConfiguration.class)) {
 
-            Cat cat = context.getBean(Cat.class);
+            Cat cat = context.getBean("kitty", Cat.class);
             Owner owner = context.getBean(Owner.class);
 
             cat.setName("Leo");

@@ -1,9 +1,10 @@
 package beans;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("kitty")
 public class Cat {
     private String name;
 
