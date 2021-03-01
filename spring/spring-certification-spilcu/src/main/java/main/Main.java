@@ -4,6 +4,8 @@ import beans.MyBean;
 import config.ProjectConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Arrays;
+
 public class Main {
 
     MyBean myBean;
@@ -22,6 +24,11 @@ public class Main {
             System.out.println(myBean.getText());
 
             System.out.println(myBean);
+
+            System.out.println("Registered beans: ");
+            Arrays.asList(context.getBeanDefinitionNames()).forEach(b ->
+                    System.out.println(b)
+            );
         }
     }
 }
