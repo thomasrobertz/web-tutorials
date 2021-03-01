@@ -1,10 +1,13 @@
 package beans;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Owner {
+
+    //@Autowired
     private Cat cat;
 
     public Cat getCat() {

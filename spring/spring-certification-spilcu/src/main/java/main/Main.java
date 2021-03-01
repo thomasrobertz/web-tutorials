@@ -1,5 +1,6 @@
 package main;
 
+import beans.Cat;
 import beans.Owner;
 import config.ProjectConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,8 +15,11 @@ public class Main {
         try (AnnotationConfigApplicationContext context =
                      new AnnotationConfigApplicationContext(ProjectConfiguration.class)) {
 
+            Cat cat = context.getBean(Cat.class);
             Owner owner = context.getBean(Owner.class);
 
+            cat.setName("Leo");
+            System.out.println(cat);
             System.out.println(owner);
         }
     }
