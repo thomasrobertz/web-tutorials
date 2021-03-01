@@ -1,7 +1,9 @@
 package beans;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Owner {
     private Cat cat;
 
