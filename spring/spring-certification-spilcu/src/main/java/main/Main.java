@@ -1,10 +1,8 @@
 package main;
 
+import beans.Owner;
 import config.ProjectConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import services.ProductDeliveryService;
-
-import java.util.Arrays;
 
 public class Main {
 
@@ -16,13 +14,9 @@ public class Main {
         try (AnnotationConfigApplicationContext context =
                      new AnnotationConfigApplicationContext(ProjectConfiguration.class)) {
 
-            ProductDeliveryService service = context.getBean(ProductDeliveryService.class);
-            service.addProduct();
+            Owner owner = context.getBean(Owner.class);
 
-            System.out.println("Registered beans: ");
-            Arrays.asList(context.getBeanDefinitionNames()).forEach(b ->
-                    System.out.printf("Bean: %s\n", b)
-            );
+            System.out.println(owner);
         }
     }
 }
