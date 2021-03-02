@@ -13,11 +13,14 @@ public class Main {
 
             ProductRepository repository = context.getBean(ProductRepository.class);
 
-            Product product = new Product();
+            repository.getProducts().forEach(p -> System.out.println("Product: "+ p.getName() + " " + p.getPrice()));
+
+            /*
             product.setName("Beer");
             product.setPrice(10);
 
             repository.addProduct(product);
+            */
         }
     }
 }
