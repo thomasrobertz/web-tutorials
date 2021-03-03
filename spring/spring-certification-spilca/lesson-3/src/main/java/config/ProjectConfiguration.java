@@ -9,9 +9,10 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = "repositories")
+@ComponentScan(basePackages = { "model", "service" })
 public class ProjectConfiguration {
 
+    /*
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource datasource = new DriverManagerDataSource();
@@ -25,4 +26,5 @@ public class ProjectConfiguration {
     public JdbcTemplate jdbcTemplate() {
         return new JdbcTemplate(dataSource());
     }
+    */
 }
