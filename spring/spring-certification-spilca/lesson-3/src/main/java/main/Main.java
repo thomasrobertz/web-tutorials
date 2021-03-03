@@ -13,6 +13,7 @@ public class Main {
         try(AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfiguration.class)) {
 
             Person p = context.getBean(Person.class);
+            p.sayHello("Bill");
 
             /*
             ProductRepository repository = context.getBean(ProductRepository.class);
