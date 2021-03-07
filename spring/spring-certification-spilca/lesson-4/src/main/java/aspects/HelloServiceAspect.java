@@ -7,5 +7,8 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class HelloServiceAspect {
-
+    @Before("execution (* services.HelloService.sayHelloTo(..))")
+    public void before() {
+        System.out.println("Before services.HelloService.sayHelloTo()");
+    }
 }
