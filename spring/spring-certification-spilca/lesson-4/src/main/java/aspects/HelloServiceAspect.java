@@ -9,8 +9,9 @@ import org.springframework.stereotype.Component;
 public class HelloServiceAspect {
 
     @Around("execution (* services.HelloService.sayHelloTo(..))")
-    public Object aroundSayHelloTo(ProceedingJoinPoint proceeding) {
-        return "Around override";
+    public Object aroundSayHelloTo(ProceedingJoinPoint proceeding) throws Throwable {
+        System.out.println("Around override");
+        return proceeding.proceed();
     }
 
     /*
