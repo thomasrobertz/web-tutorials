@@ -11,6 +11,7 @@ public class Main {
 
             //service.addProduct("Beer", 10);
             //service.addProduct("Beer", 12);
+            service.addProduct("Beer", 10.5);
         }
     }
 }
