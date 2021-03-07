@@ -11,7 +11,9 @@ public class Main {
         try(AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class)) {
             HelloService hs = context.getBean(HelloService.class);
 
-            hs.sayHelloTo("Paul");
+            String message = hs.sayHelloTo("Paul");
+
+            System.out.println(message);
         }
     }
 }
