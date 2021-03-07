@@ -12,10 +12,6 @@ public class Main {
             HelloService hs = context.getBean(HelloService.class);
 
             hs.sayHelloTo("Paul");
-
-            Arrays.asList(context.getBeanDefinitionNames()).forEach(b ->
-                    System.out.printf("Bean: %s\n", b)
-            );
         }
     }
 }
