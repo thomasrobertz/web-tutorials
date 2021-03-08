@@ -9,9 +9,7 @@ public class Main {
         try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class)) {
             ProductService service = context.getBean(ProductService.class);
 
-            //service.addProduct("Beer", 10);
-            //service.addProduct("Beer", 12);
-            service.addProduct("Beer", 10.5);
+            service.addTenProducts("Beer", 10);
         }
     }
 }

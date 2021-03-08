@@ -13,6 +13,10 @@ public class ProductService {
     @Transactional
     public void addProduct(String name, double price) {
         productRepository.addProduct(name, price);
-        throw new RuntimeException("A server did not respond in a timely manner.");
+        //throw new RuntimeException("A server did not respond in a timely manner.");
+    }
+
+    public void addTenProducts(String name, double price) {
+        productRepository.addTenProducts(name, price);
     }
 }
