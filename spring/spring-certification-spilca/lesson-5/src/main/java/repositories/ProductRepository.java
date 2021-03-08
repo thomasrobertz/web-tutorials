@@ -17,5 +17,6 @@ public class ProductRepository {
 
     public void addProduct(String name, double price) {
         jdbcTemplate.update("INSERT INTO product VALUES(NULL, ?, ?)", name, price);
+        throw new RuntimeException("A server did not respond in a timely manner.");
     }
 }
