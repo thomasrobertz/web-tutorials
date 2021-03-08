@@ -18,14 +18,18 @@ public class ProductRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    //@Transactional(propagation = Propagation.REQUIRED)
     public void addProduct(String name, double price) {
         jdbcTemplate.update("INSERT INTO product VALUES(NULL, ?, ?)", name, price);
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
     public void addTenProducts(String name, double price) {
-        IntStream.range(1, 10).forEach(i ->
-            addProduct(String.format("%s %d", name, i), price)
-        );
+        IntStream.range(1, 10).forEach(i -> {
+            addProduct(String.format("%s %d", name, i), price);
+            if (i == 5) {
+                throw new RuntimeException("A server did not respond in a timely manner.");
+            }
+        });
     }
 }
