@@ -7,9 +7,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 import java.util.stream.IntStream;
 
 @Repository
@@ -18,12 +15,11 @@ public class ProductRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    //@Transactional(propagation = Propagation.REQUIRED)
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void addProduct(String name, double price) {
         jdbcTemplate.update("INSERT INTO product VALUES(NULL, ?, ?)", name, price);
     }
 
-    @Transactional(propagation = Propagation.REQUIRED)
     public void addTenProducts(String name, double price) {
         IntStream.range(1, 10).forEach(i -> {
             addProduct(String.format("%s %d", name, i), price);
