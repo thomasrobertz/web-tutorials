@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,13 +20,18 @@ public class ProductRepository {
         jdbcTemplate.update("INSERT INTO product VALUES(NULL, ?, ?)", name, price);
     }
 
-    @Transactional(propagation = Propagation.MANDATORY)
+    @Transactional(isolation = Isolation.READ_COMMITTED)
     public void addTenProducts(String name, double price) {
         IntStream.range(1, 10).forEach(i -> {
             addProduct(String.format("%s %d", name, i), price);
             if (i == 5) {
-                throw new RuntimeException("A server did not respond in a timely manner.");
+                skipTransactionmanagement();
             }
         });
+    }
+
+    @Transactional(propagation = Propagation.NOT_SUPPORTED)
+    public void skipTransactionmanagement() {
+        throw new RuntimeException("SKIP ME");
     }
 }
