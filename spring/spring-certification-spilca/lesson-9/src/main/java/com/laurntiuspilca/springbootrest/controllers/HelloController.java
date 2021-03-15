@@ -3,6 +3,8 @@ package com.laurntiuspilca.springbootrest.controllers;
 import com.laurntiuspilca.springbootrest.dto.Person;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PreDestroy;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,6 +14,11 @@ public class HelloController {
     @GetMapping(path = "/hello/{myname}")
     public String hello(@PathVariable("myname") String name) {
         return "Hello " + name;
+    }
+
+    @GetMapping(path = "/lucky")
+    public Integer luckyNumber() {
+        return 777;
     }
 
     @PostMapping(path = "/goodbye")
@@ -42,5 +49,10 @@ public class HelloController {
         Person p2 = new Person();
         p2.setName("peter");
         return Arrays.asList(p1, p2);
+    }
+
+    @GetMapping(path = "/status")
+    public void statusTest(HttpServletResponse response) {
+        response.setStatus(HttpServletResponse.SC_NO_CONTENT);
     }
 }
