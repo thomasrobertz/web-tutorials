@@ -1,8 +1,11 @@
 package com.laurentiuspilca.springdata.repositories;
 
 import com.laurentiuspilca.springdata.entities.Product;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
+import java.util.List;
+
 public interface ProductPagedRepository extends PagingAndSortingRepository<Product, Integer> {
-    public Product findProductByName(String name);
+    public List<Product> findProductByName(String name, Sort sort);
 }

@@ -25,8 +25,8 @@ public class ProductController {
     }
 
     @GetMapping(path = "/get/{name}")
-    public Product getProduct(@PathVariable String name) {
-        return repository.findProductByName(name);
+    public List<Product> getProductsByName(@PathVariable String name) {
+        return repository.findProductByName(name, Sort.by("price").ascending());
     }
 
     @GetMapping(path = "/sort")
