@@ -1,6 +1,7 @@
 package com.laurentiuspilca.springdata.repositories;
 
 import com.laurentiuspilca.springdata.entities.Product;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
