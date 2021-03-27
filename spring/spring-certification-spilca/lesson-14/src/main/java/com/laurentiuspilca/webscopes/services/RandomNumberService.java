@@ -8,7 +8,7 @@ import org.springframework.web.context.WebApplicationContext;
 import java.util.Random;
 
 @Service
-@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class RandomNumberService {
     private final int randomNumber;
     public RandomNumberService() {
