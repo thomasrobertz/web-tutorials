@@ -15,6 +15,7 @@ public class RandomNumberService {
         randomNumber = new Random().nextInt(1000);
     }
     public int getRandomNumber() {
+        //new RuntimeException().printStackTrace();
         return randomNumber;
     }
 }
