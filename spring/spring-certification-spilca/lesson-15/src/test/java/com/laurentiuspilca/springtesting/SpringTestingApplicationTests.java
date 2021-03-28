@@ -2,7 +2,7 @@ package com.laurentiuspilca.springtesting;
 
 import com.laurentiuspilca.springtesting.repositories.ProductRepository;
 import com.laurentiuspilca.springtesting.services.ProductService;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -26,6 +26,26 @@ class SpringTestingApplicationTests {
 	@MockBean
 	private ProductRepository mockRepo;
 
+	@BeforeEach
+	public void beforeEach() {
+		System.out.println("@BeforeEach");
+	}
+
+	@AfterEach
+	public void afterEach() {
+		System.out.println("@AfterEach");
+	}
+
+	@BeforeAll
+	public static void beforeAll() {
+		System.out.println("@BeforeAll");
+	}
+
+	@AfterAll
+	public static void afterAll() {
+		System.out.println("@AfterAll");
+	}
+
 	@Test
 	void noProductsReturnedTest() {
 		given(mockRepo.getProductNames()).willReturn(Collections.emptyList());
@@ -39,8 +59,6 @@ class SpringTestingApplicationTests {
 		given(mockRepo.getProductNames()).willReturn(input);
 		List<String> result = service.getProductNamesWithEvenNumberOfCharacters();
 		assertEquals(2, result.size());
-
-		verify(mockRepo, times(2)).addProduct(any());
 	}
 
 	@Test
