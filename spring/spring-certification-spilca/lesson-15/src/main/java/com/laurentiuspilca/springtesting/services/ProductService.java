@@ -21,6 +21,7 @@ public class ProductService {
         for(String n : names) {
             if (n.length() % 2 == 0) {
                 result.add(n);
+                repository.addProduct(n);
             }
         }
         return result;
