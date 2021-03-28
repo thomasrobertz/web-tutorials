@@ -15,7 +15,8 @@ public class ProductService {
     private ProductRepository repository;
 
     public List<String> getProductNamesWithEvenNumberOfCharacters() {
-        //return repository.getProductNames().stream().filter(n -> (n.length() & 1) == 0).collect(Collectors.toList());
+        return repository.getProductNames().stream().filter(n -> (n.length() & 1) == 0).collect(Collectors.toList());
+        /*
         List<String> names = repository.getProductNames();
         List<String> result = new ArrayList<String>();
         for(String n : names) {
@@ -25,5 +26,6 @@ public class ProductService {
             }
         }
         return result;
+         */
     }
 }
