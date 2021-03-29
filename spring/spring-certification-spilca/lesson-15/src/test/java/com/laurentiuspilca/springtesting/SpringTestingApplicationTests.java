@@ -60,10 +60,4 @@ class SpringTestingApplicationTests {
 		List<String> result = service.getProductNamesWithEvenNumberOfCharacters();
 		assertEquals(2, result.size());
 	}
-
-	@Test
-	void integrationTestEvenNumberProductNames() {
-		//List<String> result = service.getProductNamesWithEvenNumberOfCharacters();
-		//assertEquals(2, result.size());
-	}
 }
