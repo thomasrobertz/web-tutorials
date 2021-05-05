@@ -1,16 +1,16 @@
 <body>
 	<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
 	<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+	<script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 	<div id="root"></div>
-	<script type="text/javascript">
-	const reactElement = React.createElement("div", {
-		className: "container",
-		children: [
-			"Time ",
-			"It's now " + Date.now(),
-			React.createElement("span", {children: " Hi!"})
-		]
-	})
-	ReactDOM.render(reactElement, document.getElementById("root"))
+	<script type="text/babel">
+	const jsxTemplate = (
+		<div className="container">
+			Time<br />			
+			It's now {Date.now()}
+			<span>Hi1</span>
+		</div>
+	)
+	ReactDOM.render(jsxTemplate, document.getElementById("root"))
 	</script>
 </body>
