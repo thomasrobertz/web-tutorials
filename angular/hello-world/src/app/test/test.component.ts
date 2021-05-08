@@ -1,20 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-test',
-  template: `    
-  <div [ngSwitch]="color">
-    <div *ngSwitchCase="'red'">You picked: red</div>
-    <div *ngSwitchCase="'blue'">You picked: blue</div>
-    <div *ngSwitchCase="'green'">You picked: green</div>
-    <div *ngSwitchDefault>You picked: nothing</div>
-  </div> 
+  template: `  xxx  
+    <h2>{{ "This is Input from somewhere above: " + parentData }}</h2>
   `,
   styles: []
 })
 export class TestComponent implements OnInit {
 
-  public color = "";
+  @Input() public parentData;
 
   constructor() { }
 
