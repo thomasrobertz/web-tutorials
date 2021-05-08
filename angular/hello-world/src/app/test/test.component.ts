@@ -6,12 +6,9 @@ import { Component, OnInit } from '@angular/core';
     <h2>
       test.component.ts
     </h2>
-    <h2 [class]="successClass">
-      Success
-    </h2>    
-    <h2 [class]="errorClass">
-      Error
-    </h2>            
+    <h2 [ngClass]="messageClasses">
+      Status
+    </h2>               
     <hr />
   `,
   styles: [`  
@@ -22,8 +19,12 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
   public message = "Hello!";
-  public successClass = "text-success";
-  public errorClass = "text-error";
+  public hasErrors = false; // true
+
+  public messageClasses = {
+    "text-success": !this.hasErrors,
+    "text-error": this.hasErrors
+  }
 
   constructor() { }
 
