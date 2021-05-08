@@ -4,23 +4,26 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-test',
   template: `
     <h2>
-      test.component.ts {{ message }}<br />
-      {{ message.length + 1 }}<br />
-      {{ "UC: " + message.toUpperCase() }}<br />
-      {{ greetAndShowMessage() }}<br />
-      {{ siteUrl }}
+      test.component.ts
     </h2>
-    <input [id]="myId" [disabled]="isDisabled" type="test" value="id property" />
+    <h2 [class]="successClass">
+      Success
+    </h2>    
+    <h2 [class]="errorClass">
+      Error
+    </h2>            
     <hr />
   `,
-  styleUrls: ['./test.component.scss']
+  styles: [`  
+    .text-success { color: green; }
+    .text-error { color: red; }
+  `]
 })
 export class TestComponent implements OnInit {
 
   public message = "Hello!";
-  public siteUrl = window.location.href;
-  public myId = "testId";
-  public isDisabled = true;
+  public successClass = "text-success";
+  public errorClass = "text-error";
 
   constructor() { }
 
