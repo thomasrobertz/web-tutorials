@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
     <h2>
       Welcome, {{name}}
     </h2> 
-    <button (click)="onClick($event);">Greet</button>      
+    <input #myInputReference type="text" />
+    <button (click)="logMessage(myInputReference.value);">Log</button>      
   `,
   styles: []
 })
@@ -19,8 +20,7 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick(event) {
-    console.log(event);
-    this.name = "you clicked"
+  logMessage(value) {
+    console.log(value);
   }
 }
