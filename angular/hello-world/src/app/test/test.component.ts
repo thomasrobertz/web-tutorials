@@ -3,27 +3,23 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-test',
   template: `
-    <h2 [style.color]="hasError? 'red' : 'green'">
+    <h2>
       Welcome {{name}}
     </h2> 
-    <h2 [ngStyle]="titleStyles">
-      ngStyle
-    </h2>       
+    <button (click)="onClick();">Greet</button>      
   `,
   styles: []
 })
 export class TestComponent implements OnInit {
 
-  public name = "Walther";
-  public hasError = true;
-
-  public titleStyles = {
-    color: "blue",
-    fontStyle: "italic"
-  }
+  public name = "Carl";
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClick() {
+    console.log("Welcome clicked!");
   }
 }
