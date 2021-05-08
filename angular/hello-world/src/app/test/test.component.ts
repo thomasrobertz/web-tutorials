@@ -3,36 +3,18 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-test',
   template: `
-    <h2>
-      test.component.ts
-    </h2>
-    <h2 [ngClass]="messageClasses">
-      Status
-    </h2>               
-    <hr />
+    <h2 [style.color]="'orange'">
+      Welcome {{name}}
+    </h2>            
   `,
-  styles: [`  
-    .text-success { color: green; }
-    .text-error { color: red; }
-  `]
+  styles: []
 })
 export class TestComponent implements OnInit {
 
-  public message = "Hello!";
-  public hasErrors = false; // true
-
-  public messageClasses = {
-    "text-success": !this.hasErrors,
-    "text-error": this.hasErrors
-  }
+  public name = "Walther";
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  greetAndShowMessage() {
-    return "Greetings, here is your message: " + this.message;
-  }
-
 }
