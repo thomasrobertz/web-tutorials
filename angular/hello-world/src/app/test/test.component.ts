@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
       {{ greetAndShowMessage() }}<br />
       {{ siteUrl }}
     </h2>
+    <input [id]="myId" [disabled]="isDisabled" type="test" value="id property" />
     <hr />
   `,
   styleUrls: ['./test.component.scss']
@@ -18,6 +19,8 @@ export class TestComponent implements OnInit {
 
   public message = "Hello!";
   public siteUrl = window.location.href;
+  public myId = "testId";
+  public isDisabled = true;
 
   constructor() { }
 
