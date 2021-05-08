@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-test',
-  template: `  xxx  
+  template: `  
     <h2>{{ "This is Input from somewhere above: " + parentData }}</h2>
   `,
   styles: []
