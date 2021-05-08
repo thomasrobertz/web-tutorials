@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
       Welcome, {{name}}
     </h2> 
     <input #myInputReference type="text" />
-    <button (click)="logMessage(myInputReference.value);">Log</button>      
+    <button (click)="logMessage(myInputReference);">Log</button>      
   `,
   styles: []
 })
@@ -20,7 +20,7 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logMessage(value) {
-    console.log(value);
+  logMessage(ref) {
+    console.log(ref.value);
   }
 }
