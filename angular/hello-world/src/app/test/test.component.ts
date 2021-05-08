@@ -6,21 +6,16 @@ import { Component, OnInit } from '@angular/core';
     <h2>
       Welcome, {{name}}
     </h2> 
-    <input #myInputReference type="text" />
-    <button (click)="logMessage(myInputReference);">Log</button>      
+    <input [(ngModel)]="name" type="text" /> 
   `,
   styles: []
 })
 export class TestComponent implements OnInit {
 
-  public name = "Carl";
+  public name = "";
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  logMessage(ref) {
-    console.log(ref.value);
   }
 }
