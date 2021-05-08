@@ -4,9 +4,9 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-test',
   template: `
     <h2>
-      Welcome {{name}}
+      Welcome, {{name}}
     </h2> 
-    <button (click)="onClick();">Greet</button>      
+    <button (click)="onClick($event);">Greet</button>      
   `,
   styles: []
 })
@@ -19,7 +19,8 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick() {
-    console.log("Welcome clicked!");
+  onClick(event) {
+    console.log(event);
+    this.name = "you clicked"
   }
 }
