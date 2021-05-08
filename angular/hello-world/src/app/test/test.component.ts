@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-test',
   template: `
-    <h2 [style.color]="'orange'">
+    <h2 [style.color]="hasError? 'red' : 'green'">
       Welcome {{name}}
     </h2>            
   `,
@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
   public name = "Walther";
+  public hasError = true;
 
   constructor() { }
 
