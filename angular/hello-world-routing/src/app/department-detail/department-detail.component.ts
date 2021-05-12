@@ -9,6 +9,9 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
     </p>
     <a (click)="gotoPrevious()">Previous</a><br />
     <a (click)="gotoNext()">Next</a>
+    <div>
+      <button (click)="gotoDepartments()">Back</button>
+    </div>
   `,
   styles: [
   ]
@@ -20,9 +23,6 @@ export class DepartmentDetailComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // Next and previous won't work with snapshot.
-    //this.departmentId = parseInt(this.route.snapshot.paramMap.get('id'));
-    // Instead we use an Observable returned from paramMap.
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.departmentId = parseInt(params.get("id"));
     })
@@ -40,5 +40,12 @@ export class DepartmentDetailComponent implements OnInit {
       "/departments",
       this.departmentId + 1 
     ])
+  }
+
+  gotoDepartments() {
+    let selectedId = this.departmentId ?? null;
+    this.router.navigate(["/departments", {
+      id: selectedId
+    }])
   }
 }
