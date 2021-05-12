@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-department-list',
   template: `
   <h2>Department List</h2>
   <ul *ngFor="let department of departments">
-    <li>{{department.id}}, {{department.name}}</li>
+    <li (click)="onDepartmentDetail(department)">{{department.id}}, {{department.name}}</li>
   </ul>
   `,
   styles: [
@@ -20,9 +21,16 @@ export class DepartmentListComponent implements OnInit {
     {"id": 4, "name": "Bootstrap" }
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onDepartmentDetail(department) {
+    this.router.navigate([
+      "/departments", 
+      department.id
+    ]);
   }
 
 }
