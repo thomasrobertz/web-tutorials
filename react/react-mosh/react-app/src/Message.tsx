@@ -4,8 +4,11 @@ function Message() {
     // Will be transpiled to JS using babel (see babeljs.io/repl to try)
 
     // Dynamic content is easy in JSX:
-    const name = "Thomas";
-    return <h1>Hello {name}</h1>
+    return <h1>Hello {getName()}</h1>
+}
+
+function getName() {
+    return "Thomas";
 }
 
 export default Message;
