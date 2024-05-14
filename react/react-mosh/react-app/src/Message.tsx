@@ -1,3 +1,4 @@
+
 // Pascal casing in React: Message instead of message
 function Message() {
     // Returning JSX (Javascript XML) - this is not HTML!
