@@ -1,7 +1,10 @@
 import Message from "./Message";
 
 /*
-with the App component that contains the Message component, we have a
+
+React Tutorial for Beginners https://www.youtube.com/watch?v=SqcY0GlETPk
+
+With the App component that contains the Message component, we have a
   -Component Tree
   -a *Virtual DOM*:
 
@@ -18,6 +21,11 @@ with the App component that contains the Message component, we have a
   be updated (in the actual DOM). This is called reconciliation.
 
   The logic for this is implemented in the react-dom library.
+  Look in index.html, it has:
+  
+      <script type="module" src="/src/main.tsx"></script>
+
+  where it loads main.tsx. In main.tsx, we create the React DOM node with ReactDOM.createRoot(...
 
 */
 
