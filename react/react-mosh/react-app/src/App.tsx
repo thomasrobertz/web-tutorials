@@ -1,4 +1,4 @@
-import Message from "./Message";
+import ListGroup from "./components/ListGroup";
 
 /*
 
@@ -30,7 +30,7 @@ With the App component that contains the Message component, we have a
 */
 
 function App() {
-  return <div><Message /></div>;
+  return <div><ListGroup /></div>;
 }
 
 export default App;
