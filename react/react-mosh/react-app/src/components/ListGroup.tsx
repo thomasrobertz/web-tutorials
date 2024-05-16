@@ -19,7 +19,9 @@ function ListGroup() {
             /* The following is JSX again.
                 We also see how we give each element it's key.
             */
-            <li key={k}>{i}</li>
+            <li className="list-group-item" key={k}>
+              {i}
+            </li>
           ))
         }
       </ul>
