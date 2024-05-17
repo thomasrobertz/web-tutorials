@@ -1,8 +1,12 @@
 import App from "../App";
+import { MouseEvent } from "react";
 
 function ListGroup() {
   let items = ["NYC", "Toronto", "Tokyo", "Paris", "Berlin"];
   //items = [];
+
+  // Event handler
+  const handleClick = (e: MouseEvent) => console.log(e.target);
 
   return (
     <>
@@ -19,7 +23,7 @@ function ListGroup() {
             /* The following is JSX again.
                 We also see how we give each element it's key.
             */
-            <li className="list-group-item" onClick={() => console.log(i)} key={k}>
+            <li className="list-group-item" onClick={handleClick} key={k}>
               {i}
             </li>
           ))
