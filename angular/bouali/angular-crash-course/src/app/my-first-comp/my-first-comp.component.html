@@ -11,8 +11,7 @@
           id="name"
           [(ngModel)]="ts_name"
           name="name"
-          required
-          (keydown)="onSubmit()"
+          required          
         >
       </div>
       <div class="form-group">
@@ -33,10 +32,11 @@
             name="message"
             required></textarea>
       </div>
-      <button type="button">Submit</button>
+      <button type="button" (click)="onSubmit()">Submit</button>
     </form>
   
-    <table>
+    <!-- if isSubmitted is false, the table will not even be present in the DOM -->
+    <table *ngIf="isSubmitted">
         <thead>
         <tr>
           <th>Name</th>
