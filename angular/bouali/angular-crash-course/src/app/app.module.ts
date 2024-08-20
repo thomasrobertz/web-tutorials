@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 // As we can see using "ng generate component my-first-comp" appended the type description "Component" to the end of the class name.
 import { MyFirstCompComponent } from './my-first-comp/my-first-comp.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MyFirstCompComponent } from './my-first-comp/my-first-comp.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
