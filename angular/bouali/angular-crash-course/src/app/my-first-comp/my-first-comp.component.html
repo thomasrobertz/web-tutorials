@@ -1,6 +1,9 @@
 <div class="form-container">
+
+    <!-- Example of two way data binding with a simple form -->
+
     <h2>Simple Form</h2>
-    <form>
+    <form (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="name">Name:</label>
         <input

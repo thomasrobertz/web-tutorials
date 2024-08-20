@@ -9,4 +9,10 @@ export class MyFirstCompComponent {
   ts_name: string = "John";
   ts_email: string = "john@doe.com";
   ts_message: string = "Hello World";
+
+  onSubmit() {
+    console.log('Form submitted ' + this.ts_name 
+      + " " + this.ts_email 
+      + " " + this.ts_message);
+  }
 }
