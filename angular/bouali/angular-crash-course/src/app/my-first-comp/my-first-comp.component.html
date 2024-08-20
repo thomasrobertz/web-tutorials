@@ -62,7 +62,9 @@
         <app-message-details
           *ngFor="let message of ts_messages;let i = index"
           [md_message]="message"
+          [md_index]="i"
+          (md_delete)="deleteMessage($event)"
         ></app-message-details>
     </div>
-    
+
   </div>

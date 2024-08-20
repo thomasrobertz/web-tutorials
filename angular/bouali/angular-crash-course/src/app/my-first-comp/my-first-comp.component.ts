@@ -24,4 +24,8 @@ export class MyFirstCompComponent {
       message: this.ts_message
     });
   }
+
+  deleteMessage(index: number) {
+    this.ts_messages.splice(index, 1);
+  }
 }
