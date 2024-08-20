@@ -35,7 +35,7 @@
       <button type="button" (click)="onSubmit()">Submit</button>
     </form>
   
-    <!-- if isSubmitted is false, the table will not even be present in the DOM -->
+    <!-- 
     <table *ngIf="isSubmitted">
         <thead>
         <tr>
@@ -46,13 +46,23 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let msg of ts_messages;let i = index">
+        <tr *ngFor="let message of ts_messages;let i = index">
           <td>{{ i + 1 }}</td>
-          <td>{{ msg.name }}</td>
-          <td>{{ msg.email }}</td>
-          <td>{{ msg.message }}</td>
+          <td>{{ message.name }}</td>
+          <td>{{ message.email }}</td>
+          <td>{{ message.message }}</td>
         </tr>
         </tbody>
     </table>
+    -->
+
+    <!-- Displaying the messages in a flex container as cards, instead of a table like above -->
+    <div class="flex-container" *ngIf="isSubmitted">
+        <!-- Using ngFor directly in the component -->
+        <app-message-details
+          *ngFor="let message of ts_messages;let i = index"
+          [md_message]="message"
+        ></app-message-details>
+    </div>
     
   </div>
