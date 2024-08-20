@@ -3,7 +3,7 @@
     <!-- Example of two way data binding with a simple form -->
 
     <h2>Simple Form</h2>
-    <form (ngSubmit)="onSubmit()">
+    <form>
       <div class="form-group">
         <label for="name">Name:</label>
         <input
@@ -32,7 +32,7 @@
             name="message"
             required></textarea>
       </div>
-      <button type="submit">Submit</button>
+      <button type="button"  (click)="onSubmit()">Submit</button>
     </form>
   
     <table>
